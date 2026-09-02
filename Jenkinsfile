@@ -4,13 +4,13 @@ pipeline {
 
         stage('Checkout Code') {
             steps {
-                git 'https://github.com/Koushick25/jenkins_pipeline.git'
+                git branch : 'main', url: 'https://github.com/Koushick25/jenkins_pipeline.git'
             }
         }
 
         stage('Build') {
             steps {
-                sh 'python3 sum.py'
+                bat 'python3 sum.py'
             }
         }
     }
